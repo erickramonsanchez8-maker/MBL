@@ -8,7 +8,7 @@
 <title>MBL — Fine Jewelry</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Italiana&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fredoka:wght@600;700&family=Italiana&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#101114;--panel:#1b1d21;--silver:#d9dce0;--muted:#92969e;--line:rgba(255,255,255,.13);--glass:rgba(255,255,255,.075);--glass2:rgba(255,255,255,.12);--white:#f5f4f1;--serif:'Italiana',Georgia,serif;--sans:'DM Sans',sans-serif}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 75% 5%,#34373d 0,transparent 31%),radial-gradient(ellipse at 0 45%,#25272c 0,transparent 28%),var(--bg);color:var(--white);font-family:var(--sans);overflow-x:hidden}button,input{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}.grain{position:fixed;inset:0;pointer-events:none;z-index:20;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
@@ -26,14 +26,56 @@ footer{border-top:1px solid var(--line);padding:45px max(7vw,28px);display:flex;
 @media(max-width:900px){.hero{grid-template-columns:1fr 1fr;gap:25px}.hero-art{height:440px}.catalog{grid-template-columns:repeat(2,1fr)}.product-photo{height:350px}.nav{gap:16px}.feature-inner{grid-template-columns:1fr 1fr}.story{gap:5vw}}
 @media(max-width:620px){header{top:10px;height:62px;padding:0 15px;width:calc(100% - 20px);border-radius:18px}.brand{font-size:25px}.nav{display:none}.hero{padding:130px 22px 65px;grid-template-columns:1fr;gap:28px;min-height:auto}.hero h1{font-size:76px;margin:20px 0}.hero-art{height:410px;border-radius:45% 45% 20px 20px}.hero-copy{font-size:13px}.section{padding:70px 20px}.section-head{display:block}.section-head p{margin-top:20px}.catalog{gap:8px}.product-photo{height:230px;border-radius:13px}.product-info{display:block;padding:12px 2px 20px}.product-info h3{font-size:20px}.price{display:block;margin-top:8px}.quick{opacity:1;transform:none;padding:9px}.feature{padding:0 20px;margin-bottom:50px}.feature-inner{grid-template-columns:1fr}.feature-image{min-height:330px;height:330px}.feature-copy{padding:32px 25px}.story{grid-template-columns:1fr;gap:35px}.story-mark{font-size:130px}footer{padding:35px 22px;gap:20px;flex-wrap:wrap}.modal-box{grid-template-columns:1fr}.modal-box img{height:280px;min-height:0}.modal-info{padding:28px 24px}.drawer{padding:20px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+/* ── MBL / refinamiento visual 2026 ── */
+:root{--space:clamp(16px,2vw,28px);--radius:22px;--blur:24px;--shadow:0 22px 70px rgba(0,0,0,.34);--color-bg:#101114;--color-glass:rgba(255,255,255,.095);--color-silver:#dfe2e6;--bubble:'Fredoka',sans-serif;--mx:50%;--my:0%}
+.fx-defs{position:absolute;width:0;height:0;overflow:hidden}
+body{background-color:var(--color-bg);background-image:radial-gradient(ellipse at 75% 5%,#34373d 0,transparent 31%),radial-gradient(ellipse at 0 45%,#25272c 0,transparent 28%)}
+.mesh{position:fixed;inset:-18%;z-index:-1;pointer-events:none;opacity:.48;filter:blur(70px);background:radial-gradient(ellipse at 18% 20%,rgba(190,198,210,.18),transparent 28%),radial-gradient(ellipse at 78% 30%,rgba(110,118,132,.2),transparent 27%),radial-gradient(ellipse at 48% 82%,rgba(150,154,163,.14),transparent 30%);background-size:130% 130%;animation:mesh-drift 24s ease-in-out infinite alternate}
+@keyframes mesh-drift{from{transform:translate3d(-2%,1%,0) scale(1)}to{transform:translate3d(2%,-2%,0) scale(1.08)}}
+.glass{backdrop-filter:blur(var(--blur)) saturate(175%);-webkit-backdrop-filter:blur(var(--blur)) saturate(175%);border:1px solid transparent;background:linear-gradient(135deg,rgba(255,255,255,.15),rgba(255,255,255,.035) 48%,rgba(255,255,255,.075)) padding-box,linear-gradient(155deg,rgba(255,255,255,.48),rgba(255,255,255,.07) 38%,rgba(0,0,0,.38)) border-box;box-shadow:inset 0 1px 1px rgba(255,255,255,.24),inset 0 -1px 0 rgba(0,0,0,.24),var(--shadow);position:relative;overflow:hidden}
+.glass:before{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;background:radial-gradient(260px circle at var(--mx) var(--my),rgba(255,255,255,.15),transparent 65%);opacity:.8;transition:opacity .25s}
+.brand,.hero h1,.section-head h2,.feature-copy h2,.story-mark,.story-copy h2,.drawer-head h2,.modal-info h2,.product-info h3,.footer-brand{font-family:var(--bubble);font-weight:700;letter-spacing:-.045em;color:transparent;background:radial-gradient(ellipse at 32% 18%,#fff 0%,#f4f5f6 16%,#cdd1d7 43%,#9299a4 72%,#e8eaed 100%);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;filter:url(#bubble-light) drop-shadow(0 2px 0 rgba(255,255,255,.22)) drop-shadow(0 5px 0 rgba(115,120,130,.8)) drop-shadow(0 8px 0 rgba(47,50,56,.9)) drop-shadow(0 12px 10px rgba(0,0,0,.55));text-shadow:0 -1px 1px rgba(255,255,255,.8),0 1px 0 rgba(255,255,255,.22);animation:helium 7s ease-in-out infinite}
+.brand{font-size:32px;letter-spacing:.08em}
+.hero h1{font-size:clamp(65px,8vw,116px);line-height:.92}
+.hero h1 em{font-style:normal;color:transparent;background:linear-gradient(145deg,#fff 5%,#d8dce2 45%,#a4aab4 72%,#f5f6f7);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.section-head h2,.feature-copy h2,.story-copy h2{font-family:var(--bubble);font-weight:700;line-height:.98}
+.product-info h3{font-size:24px}
+.story-mark{font-size:clamp(100px,18vw,230px);letter-spacing:-.08em}
+.footer-brand{font-size:36px;letter-spacing:.08em}
+@keyframes helium{0%,100%{transform:translateY(0) rotate(-.35deg)}50%{transform:translateY(-5px) rotate(.65deg)}}
+.brand:hover,.hero h1:hover,.section-head h2:hover,.feature-copy h2:hover,.story-copy h2:hover,.footer-brand:hover{animation:bubble-pop .62s cubic-bezier(.2,1.7,.45,1) both}
+@keyframes bubble-pop{0%{transform:scale(1)}45%{transform:scale(1.045,.96) rotate(-1deg)}75%{transform:scale(.99,1.025) rotate(.6deg)}100%{transform:scale(1)}}
+button,a,.product,.filter{ -webkit-tap-highlight-color:transparent}
+button:focus-visible,a:focus-visible{outline:2px solid #f0f2f5;outline-offset:4px}
+button:disabled{opacity:.45;cursor:not-allowed}
+.cta,.checkout,.filter,.icon-btn,.close,.quick{transition:transform .38s cubic-bezier(.2,1.5,.4,1),background .25s,border-color .25s,filter .25s}
+.cta:active,.checkout:active,.icon-btn:active,.filter:active,.quick:active{transform:scale(.96)}
+.filter.active{box-shadow:inset 0 1px 0 #ffffff40,0 5px 20px #0004}
+.product-photo{border-radius:20px}
+.quick{min-height:44px}
+.toast{position:fixed;z-index:80;left:50%;bottom:28px;transform:translate(-50%,18px) scale(.94);padding:13px 20px;border-radius:16px;color:#fff;font-size:12px;opacity:0;pointer-events:none;transition:opacity .25s,transform .4s cubic-bezier(.2,1.5,.4,1)}
+.toast.show{opacity:1;transform:translate(-50%,0) scale(1)}
+.mobile-bar{display:none}
+.mobile-bar a,.mobile-bar button{border:0;background:none;color:#f4f4f4;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-width:64px;min-height:48px;font-size:10px}
+.mobile-bar small{font-size:9px;letter-spacing:.06em;color:#d4d6da}
+.mobile-bar b{font-weight:600}
+.mini-icon{font-size:20px;line-height:1}
+@supports not ((backdrop-filter:blur(2px)) or (-webkit-backdrop-filter:blur(2px))){.glass,.drawer,.quick{background:rgba(31,33,38,.96)}}
+@supports (view-transition-name:root){::view-transition-old(root),::view-transition-new(root){animation-duration:.35s}}
+@media(max-width:620px){body{padding-bottom:82px}.mobile-bar{display:flex;position:fixed;z-index:35;bottom:max(10px,env(safe-area-inset-bottom));left:12px;right:12px;min-height:64px;border-radius:20px;align-items:center;justify-content:space-around;padding:6px 12px}.mobile-bar:before{display:none}.hero h1{font-size:clamp(62px,16vw,82px)}.brand{font-size:28px}.product-info h3{font-size:21px}.quick{min-height:42px}.toast{bottom:95px;max-width:calc(100% - 32px);white-space:nowrap}}
+@media(prefers-color-scheme:light){:root{color-scheme:dark}/* MBL mantiene su dirección nocturna; el vidrio aumenta contraste en entornos claros */.glass{border-color:rgba(255,255,255,.28)}}
+@media(prefers-reduced-motion:reduce){.mesh,.brand,.hero h1,.section-head h2,.feature-copy h2,.story-mark,.story-copy h2,.drawer-head h2,.modal-info h2,.product-info h3,.footer-brand{animation:none!important;filter:none!important}.glass:before{display:none}}
+@media(max-width:900px){.glass{backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%)}}
+
 </style>
 </head>
 <body>
-<div class="grain"></div>
+<div class="mesh" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div><svg class="fx-defs" aria-hidden="true" focusable="false"><filter id="bubble-light" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur in="SourceAlpha" stdDeviation="1.8" result="soft"/><feSpecularLighting in="soft" surfaceScale="5" specularConstant=".85" specularExponent="22" lighting-color="#fff" result="shine"><fePointLight x="-400" y="-500" z="220"/></feSpecularLighting><feComposite in="shine" in2="SourceAlpha" operator="in" result="shine-cut"/><feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="shine-cut"/></feMerge></filter></svg>
 <header class="glass">
   <a class="brand" href="#">MBL</a>
-  <nav class="nav"><a href="#catalogo">Colección</a><a href="#atelier">Atelier</a><a href="#contacto">Contacto</a></nav>
-  <div class="head-actions"><button class="icon-btn" aria-label="Abrir carrito" onclick="openCart()">Bag <span class="cart-count" id="cartCount">0</span></button></div>
+  <nav class="nav"><a href="#catalogo">Colección</a><a href="#filosofia">Nuestra esencia</a><a href="#contacto">Contacto</a></nav>
+  <div class="head-actions"><button class="icon-btn" aria-label="Abrir carrito" aria-controls="cartOverlay" onclick="openCart()">Bolsa <span class="cart-count" id="cartCount">0</span></button></div>
 </header>
 <main>
 <section class="hero">
@@ -47,12 +89,12 @@ footer{border-top:1px solid var(--line);padding:45px max(7vw,28px);display:flex;
  <div class="catalog" id="catalog"></div>
 </section>
 <section class="feature"><div class="feature-inner glass"><div class="feature-image"><img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1000&q=85" alt="Anillo de diseño minimalista"></div><div class="feature-copy"><div class="eyebrow">Pieza de temporada · Nº 008</div><h2>Una forma.<br>Una historia.</h2><p>La belleza de una pieza no está en llamar la atención, sino en permanecer cerca. Descubre objetos diseñados para convertirse en parte de ti.</p><a class="cta" href="#catalogo">Descubrir piezas <span>↗</span></a></div></div></section>
-<section class="section story" id="atelier"><div class="story-mark">M.</div><div class="story-copy"><div class="eyebrow">02 — Nuestra filosofía</div><h2>Menos ruido.<br>Más significado.</h2><p>En MBL creemos en la permanencia. Seleccionamos piezas con una mirada atenta al detalle, la proporción y la materialidad. Una joya debe sentirse tan bien como se ve: hoy, y muchos años después.</p></div></section>
-<section class="section" id="contacto" style="padding-top:20px"><div class="section-head"><div><div class="eyebrow">03 — Atención personal</div><h2>Hablemos de tu pieza.</h2></div><p>¿Buscas un regalo, una talla especial o una pieza para una ocasión importante? Nuestro equipo puede orientarte.</p></div><a class="cta" href="mailto:hola@mbljoyeria.com">Contactar atelier <span>↗</span></a></section>
+<section class="section story" id="filosofia"><div class="story-mark">M.</div><div class="story-copy"><div class="eyebrow">02 — Nuestra filosofía</div><h2>Menos ruido.<br>Más significado.</h2><p>En MBL creemos en la permanencia. Seleccionamos piezas con una mirada atenta al detalle, la proporción y la materialidad. Una joya debe sentirse tan bien como se ve: hoy, y muchos años después.</p></div></section>
+<section class="section" id="contacto" style="padding-top:20px"><div class="section-head"><div><div class="eyebrow">03 — Atención personal</div><h2>Hablemos de tu pieza.</h2></div><p>¿Buscas un regalo, una talla especial o una pieza para una ocasión importante? Nuestro equipo puede orientarte.</p></div><a class="cta" href="mailto:hola@mbljoyeria.com">Escribir a MBL <span>↗</span></a></section>
 </main>
-<footer><div class="footer-brand">MBL</div><div>Fine jewelry · México</div><div>© 2026 MBL. Todos los derechos reservados.</div></footer>
-<div class="overlay" id="cartOverlay" onclick="if(event.target===this)closeCart()"><aside class="drawer"><div class="drawer-head"><h2>Tu selección</h2><button class="close" onclick="closeCart()" aria-label="Cerrar">×</button></div><div id="cartItems"></div><div id="cartBottom"></div></aside></div>
-<div class="modal" id="productModal" onclick="if(event.target===this)closeProduct()"><div class="modal-box"><img id="modalImg" src="" alt=""><div class="modal-info"><button class="close modal-close" onclick="closeProduct()" aria-label="Cerrar">×</button><div class="eyebrow" id="modalCategory"></div><h2 id="modalName"></h2><div class="modal-price" id="modalPrice"></div><p id="modalDesc"></p><p style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#9da1a8">Material y disponibilidad sujetos a confirmación.</p><button class="checkout" id="modalAdd">Añadir a la bolsa</button></div></div></div>
+<footer><div class="footer-brand">MBL</div><div>Fine jewelry · México</div><div>© 2026 MBL. Todos los derechos reservados.</div></footer><nav class="mobile-bar glass" aria-label="Navegación rápida"><a href="#catalogo" aria-label="Ir a colección"><span class="mini-icon">⌕</span><small>Colección</small></a><a href="#filosofia" aria-label="Nuestra esencia"><span class="mini-icon">◌</span><small>Esencia</small></a><button onclick="openCart()" aria-label="Abrir bolsa"><span class="mini-icon">♧</span><small>Bolsa <b id="mobileCartCount">0</b></small></button></nav><div class="toast glass" id="toast" role="status" aria-live="polite"></div>
+<div class="overlay" id="cartOverlay" role="dialog" aria-modal="true" aria-label="Tu bolsa de compra" onclick="if(event.target===this)closeCart()"><aside class="drawer"><div class="drawer-head"><h2>Tu selección</h2><button class="close" onclick="closeCart()" aria-label="Cerrar">×</button></div><div id="cartItems"></div><div id="cartBottom"></div></aside></div>
+<div class="modal" id="productModal" role="dialog" aria-modal="true" aria-label="Detalle de producto" onclick="if(event.target===this)closeProduct()"><div class="modal-box"><img id="modalImg" src="" alt=""><div class="modal-info"><button class="close modal-close" onclick="closeProduct()" aria-label="Cerrar">×</button><div class="eyebrow" id="modalCategory"></div><h2 id="modalName"></h2><div class="modal-price" id="modalPrice"></div><p id="modalDesc"></p><p style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#9da1a8">Material y disponibilidad sujetos a confirmación.</p><button class="checkout" id="modalAdd">Añadir a la bolsa</button></div></div></div>
 <script>
 const products=[
 {id:1,name:"Anillo Serein",category:"Anillos",price:2850,tag:"Favorito",desc:"Una silueta depurada con acabado pulido. Una pieza esencial para llevar todos los días.",img:"https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=900&q=85"},
@@ -76,6 +118,17 @@ function openCart(){document.getElementById("cartOverlay").classList.add("open")
 function openProduct(id){const p=products.find(x=>x.id===id);document.getElementById("modalImg").src=p.img;document.getElementById("modalImg").alt=p.name;document.getElementById("modalCategory").textContent=p.category+" · MBL";document.getElementById("modalName").textContent=p.name;document.getElementById("modalPrice").textContent=money(p.price);document.getElementById("modalDesc").textContent=p.desc;document.getElementById("modalAdd").onclick=()=>addToCart(id);document.getElementById("productModal").classList.add("open")}
 function closeProduct(){document.getElementById("productModal").classList.remove("open")}
 function checkout(){const lines=cart.map(x=>{const p=products.find(y=>y.id===x.id);return x.qty+" × "+p.name+" — "+money(p.price*x.qty)}).join("%0A");const total=cart.reduce((s,x)=>s+products.find(p=>p.id===x.id).price*x.qty,0);const msg="Hola, quiero solicitar este pedido de MBL:%0A"+lines+"%0A%0ASubtotal: "+money(total)+"%0A¿Me pueden confirmar disponibilidad y forma de pago?";window.open("https://wa.me/52XXXXXXXXXX?text="+msg,"_blank");}
+
+// ── Microinteracciones accesibles y feedback ──
+let toastTimer;
+function showToast(message){const el=document.getElementById("toast");if(!el)return;el.textContent=message;el.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove("show"),2600)}
+document.addEventListener("pointermove",e=>{if(e.pointerType==="touch")return;document.documentElement.style.setProperty("--mx",e.clientX+"px");document.documentElement.style.setProperty("--my",e.clientY+"px")},{passive:true});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeCart();closeProduct()}});
+const _saveCart=saveCart;
+saveCart=function(){_saveCart();const count=cart.reduce((n,x)=>n+x.qty,0);const mobile=document.getElementById("mobileCartCount");if(mobile)mobile.textContent=count};
+const _addToCart=addToCart;
+addToCart=function(id){_addToCart(id);const p=products.find(x=>x.id===id);showToast(p.name+" se añadió a tu bolsa")};
+
 renderCatalog();saveCart();
 </script>
 </body>
